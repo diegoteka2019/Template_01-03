@@ -1,1 +1,58 @@
+@import './app/SASS/responsive.scss';
+
 /* You can add global styles to this file, and also import other style files */
+html, body,h1,h2, h3, h4, h5, h6 {
+    padding: 0 !important;
+    margin:0 !important;
+}   
+
+html,body{
+    background-color: rgba(255,255,255,1);
+    #sidebar{
+        font-family: 'Rubik', sans-serif;
+    }
+
+        .list-group-item .list-group-item-action:hover {
+            background-color: red !important;
+            color: red;
+        }
+        
+    .list-group-item.active { 
+        color: orange !important;
+        background-color:transparent;
+        font-weight: 600;   
+    }
+}
+
+//colores
+$button-rounded-color-hover: #B40000;
+
+.custom-font-1{
+    font-family: 'Rubik', sans-serif;
+}
+
+.btn-circle-custom{
+    background: #fbc528;
+    width: 44px;
+    height: 44px;
+    color: #fff!important;
+    font-weight: 500;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0px;
+}
+
+.btn-circle-custom:hover{
+    background: $button-rounded-color-hover;
+}
+
+.shadow {
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.hideCmp{
+    margin-left: -1000px;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+    transition-timing-function: ease-in;
+}

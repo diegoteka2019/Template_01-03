@@ -1,21 +1,52 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+<!-- header -->
+<div class="container-fluid p-0">
+  <nav id='rootNav' class="navbar py-4  Regular Small shadow border-0">
+      <a class="navbar-brand ml-5" href="#" (click)='hideMenu()'>
+        <img src="assets/logo.png" alt="logo">
+      </a>
+
+      <ul class='nav mr-5'>
+        <li class='nav-item mr-3 mt-3 custom-font-1 '>
+            <h6 class='font-weight-lighter text-black-50'>{{ActualDate | date:'d/M/y | h:m'}}</h6>
+        </li>
+        <li class='nav-item mb-2 mt-1'>
+            <div class='dropdown'>
+              <button data-toggle="dropdown" width="44px" height="44px" class='btn-circle-custom Small shadow mr-1 bg-warning dropdown-toggle'>
+                EL
+              </button>
+              <div class="dropdown-menu Small shadow rounded-lg border-0">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>    
+          </li>
+      </ul>
+  </nav>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- header -->
+
+<!-- Sidebar -->
+    <nav  class='d-flex border-0'>
+        <div #sidebar id="sidebar" class="wrapper d-flex flex-column  align-items-stretch pt-1">
+    <nav  class='d-flex border-0'>
+        <ul class="list-group border-1 rounded Small shadow">
+            <li id='item1' #item1 (click)= 'selectItem(item1)' [ngClass]="{'active': (ActiveSideItem === 'item1')}" class="list-group-item text-black-50 border-0 active">Ventas</li>
+            <li id='item2' #item2 (click)= 'selectItem(item2)' [ngClass]="{'active': (ActiveSideItem === 'item2')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Avance de Ventas</li>
+            <li id='item3' #item3 (click)= 'selectItem(item3)'[ngClass]="{'active': (ActiveSideItem === 'item3')}"  class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Cierre de Ventas Mensuales</li>
+            <li id='item4' #item4 (click)= 'selectItem(item4)' [ngClass]="{'active': (ActiveSideItem === 'item4')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Cierre de Ventas Acumulado Anual</li>
+            <li id='item5' #item5 (click)= 'selectItem(item5)' [ngClass]="{'active': (ActiveSideItem === 'item5')}" class="list-group-item list-group-item-action text-black-50 border-0">Créditos y Cobranzas</li>
+            <li id='item6' #item6 (click)= 'selectItem(item6)' [ngClass]="{'active': (ActiveSideItem === 'item6')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Composición de Deuda <br>de Cuenta Corriente</li>
+            <li id='item7' #item7 (click)= 'selectItem(item7)' [ngClass]="{'active': (ActiveSideItem === 'item7')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Resumen de cuenta corriente</li>
+            <li id='item8' #item8 (click)= 'selectItem(item8)'[ngClass]="{'active': (ActiveSideItem === 'item8')}"  class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Situación Crediticia</li>
+            <li id='item9' #item9 (click)= 'selectItem(item9)' [ngClass]="{'active': (ActiveSideItem === 'item9')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Saldo de Envases</li>
+            <li id='item10' #item10 (click)= 'selectItem(item10)' [ngClass]="{'active': (ActiveSideItem === 'item10')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Movimiento de Envase</li>
+        </ul>
+    </nav>
+</div>
+<!-- Sidebar -->
+
+
 
 <router-outlet></router-outlet>
